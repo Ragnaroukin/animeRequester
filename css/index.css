@@ -1,0 +1,6 @@
+#margeForm {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement */
+    min-height: 100vh;       /* prend toute la hauteur de la fenêtre */
+}
