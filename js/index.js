@@ -1,7 +1,7 @@
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+const hr = new XMLHttpRequest();
+hr.withCredentials = true;
 
-xhr.addEventListener('readystatechange', function () {
+hr.addEventListener('readystatechange', function () {
     if (this.readyState === this.DONE) {
         // Parse la réponse JSON
         const data = JSON.parse(this.responseText);
@@ -11,10 +11,10 @@ xhr.addEventListener('readystatechange', function () {
     }
 });
 
-xhr.open('GET', 'https://anime-db.p.rapidapi.com/genre');
-xhr.setRequestHeader('x-rapidapi-key', '589ffe3c27mshed298ed00c88ee4p150c58jsnec449e25eca6');
-xhr.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
-xhr.send();
+hr.open('GET', 'https://anime-db.p.rapidapi.com/genre');
+hr.setRequestHeader('x-rapidapi-key', '589ffe3c27mshed298ed00c88ee4p150c58jsnec449e25eca6');
+hr.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
+hr.send();
 
 const container = document.getElementById("genre");
 
