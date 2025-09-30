@@ -7,26 +7,33 @@
     <title>AnimeRequester</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body class="bg-lightgray text-black text-center">
 
     <head>
-        <h1 class="">Recherche Anime</h1>
+        
     </head>
     <main>
+        <div id = "margeForm">
         <form id="form" class="m-5" method="get" action="./html/result.html">
             <div id="name">
-                <label for="nom">Nom de l'animé : </label>
-                <input type="text" name="nom" />
+                <h1 class="">Recherche Anime</h1>
+                <div class="m-3">
+                <label for="nom" >Nom de l'animé : </label>
+                <input type="text" class="form-control" name="nom" />
+                </div>
             </div>
-            <div id="id">
+                <div class="m-3">
                 <label for="id">ID de l'animé : </label>
-                <input type="text" name="id" size="5"/>
+                <input type="text" class="form-control"name="id" size="5"/>
+                </div>
+                <div class="m-3">
                 <label for="classement">Classement : </label>
-                <input type="text" name="classement" size="5"/>
-            </div>
-            <div id="genre">
+                <input type="text" class="form-control"name="classement" size="5"/>
+                </div>
+            <div id="genre" class = "m-3">
                 <label for="id">Genres : </label>
                 <div>
                     <input type="checkbox" id="scales" name="scales" checked />
@@ -38,10 +45,12 @@
                 </div>
             </div>
             <div id="bouton">
-                <input type="submit" value="Rechercher" />
-                <button id="reinitialize">Réinitialiser</button>
+                
+                <button class="btn btn-secondary" id="reinitialize">Réinitialiser</button>
+                <input class="btn btn-primary" type="submit" value="Rechercher" />
             </div>
         </form>
+        </div>
     </main>
     <footer>
 
