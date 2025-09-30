@@ -283,7 +283,9 @@ card.innerHTML = `
     <img src="${images[i]}" class="card-img-top card-internal" alt="${titles[i]}">
     <div class="card-body">
         <h5 class="card-title">${titles[i]}</h5>
-        <p class="card-text">${synopsis[i].substring(0, 100)}...</p>
+        <div class="shortsynopsis">
+            <p class="card-text">${synopsis[i].substring(0, 100)}...</p>
+        </div>
         <p class="card-text"><small class="text-muted">Genres: ${genres[i].join(", ")}</small></p>
         
         <div class="synopsis-hover">
