@@ -9,22 +9,33 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-lightgray text-black text-center">
 
     <head>
-
+        <h1 class="">Recherche Anime</h1>
     </head>
     <main>
-        <form>
+        <form id="form" class="m-5" method="get" action="./html/result.html">
             <div id="name">
                 <label for="nom">Nom de l'animé : </label>
                 <input type="text" name="nom" />
             </div>
             <div id="id">
                 <label for="id">ID de l'animé : </label>
-                <input type="text" name="id" />
+                <input type="text" name="id" size="5"/>
                 <label for="classement">Classement : </label>
-                <input type="text" name="classement" />
+                <input type="text" name="classement" size="5"/>
+            </div>
+            <div id="genre">
+                <label for="id">Genres : </label>
+                <div>
+                    <input type="checkbox" id="scales" name="scales" checked />
+                    <label for="action">Action</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="horns" name="horns" />
+                    <label for="aventure">Aventure</label>
+                </div>
             </div>
             <div id="bouton">
                 <input type="submit" value="Rechercher" />
