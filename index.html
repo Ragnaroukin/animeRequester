@@ -13,45 +13,38 @@
 <body class="bg-lightgray text-black text-center">
 
     <head>
-        
+
     </head>
     <main>
-        <div id = "margeForm">
-        <form id="form" class="m-5" method="get" action="./html/result.html">
-            <div id="name">
-                <h1 class="">Recherche Anime</h1>
-                <div class="m-3">
-                <label for="nom" >Nom de l'animé : </label>
-                <input type="text" class="form-control" name="nom" />
-                </div>
-            </div>
-                <div class="m-3">
-                <label for="id">ID de l'animé : </label>
-                <input type="text" class="form-control"name="id" size="5"/>
+        <div id="margeForm">
+            <form id="form" class="m-5" method="post" action="./html/result.html">
+                <div id="name">
+                    <h1 class="">Recherche Anime</h1>
+                    <div class="m-3">
+                        <label for="nom">Nom de l'animé : </label>
+                        <input type="text" class="form-control" name="nom" />
+                    </div>
                 </div>
                 <div class="m-3">
-                <label for="classement">Classement : </label>
-                <input type="text" class="form-control"name="classement" size="5"/>
+                    <label for="id">ID de l'animé : </label>
+                    <input type="text" class="form-control" name="id" size="5" />
                 </div>
-            <div id="genre" class = "m-3">
-                <label for="id">Genres : </label>
-                <div>
-                    <input type="checkbox" id="scales" name="scales" checked />
-                    <label for="action">Action</label>
+                <div class="m-3">
+                    <label for="classement">Classement : </label>
+                    <input type="text" class="form-control" name="classement" size="5" />
                 </div>
-                <div>
-                    <input type="checkbox" id="horns" name="horns" />
-                    <label for="aventure">Aventure</label>
+
+                <div id="genre">
                 </div>
-            </div>
-            <div id="bouton">
-                
-                <button class="btn btn-secondary" id="reinitialize">Réinitialiser</button>
-                <input class="btn btn-primary" type="submit" value="Rechercher" />
-            </div>
-        </form>
+                <div id="bouton">
+
+                    <button class="btn btn-secondary" id="reinitialize">Réinitialiser</button>
+                    <input class="btn btn-primary" type="submit" value="Rechercher" />
+                </div>
+            </form>
         </div>
     </main>
+    <script src="./js/index.js"></script>
     <footer>
 
     </footer>
