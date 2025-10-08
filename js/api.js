@@ -50,6 +50,7 @@ promise
             result = {res};
         else
             result = res;
+        console.log(result);
     })
     .catch(err => {
         console.log(url);
