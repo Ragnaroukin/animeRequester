@@ -1,3 +1,5 @@
+import { result } from './api.js';
+
 const resultExample = {
     "data": [
       {
@@ -262,8 +264,7 @@ const resultExample = {
   };
 
   const container = document.getElementById("containerMain");
-
-  let data = resultExample.data;
+  let data = result.data;
   let dataIds = data.map(item => item._id);
   let titles = data.map(item => item.title);
   let images = data.map(item => item.image);
