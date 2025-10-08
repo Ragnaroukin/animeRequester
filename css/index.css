@@ -1,6 +1,33 @@
+:root {
+    --couleur1: #131313ff; 
+    --couleur2: #ffffff; 
+}
 #margeForm {
     display: flex;
     justify-content: center; /* centre horizontalement */
     align-items: center;     /* centre verticalement */
     min-height: 100vh;       /* prend toute la hauteur de la fenêtre */
+}
+
+#genre {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 3 colonnes égales */
+  gap: 10px; /* espace entre les cases */
+}
+
+.genre-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.text-blanc {
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6, p, label{
+    color: var(--couleur1);
+    
+}
+body {
+    background-color: var(--couleur2);
 }

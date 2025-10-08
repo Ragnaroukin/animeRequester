@@ -17,7 +17,7 @@ xhr.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
 xhr.send();
 
 const container = document.getElementById("genre");
-
+let sombreButton = document.getElementById("darkmode");
 function create_genre(data) {
     let dataGenres = data.map(item => item._id); // maintenant ça marche
 
@@ -36,3 +36,23 @@ function create_genre(data) {
         group.appendChild(checkbox);
     }
 }
+
+sombreButton.addEventListener("click", function() {
+    
+      if (sombreButton.classList.contains("btn-dark")) {
+        sombreButton.textContent = "Mode clair";
+        sombreButton.classList.remove("btn-dark");
+        sombreButton.classList.add("btn-light");
+        document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
+        document.documentElement.style.setProperty('--couleur2', '#131313ff');
+      } else {
+        sombreButton.textContent = "Mode sombre";
+        sombreButton.classList.remove("btn-light");
+        sombreButton.classList.add("btn-dark");
+        document.documentElement.style.setProperty('--couleur1', '#131313ff'); // fond principal
+        document.documentElement.style.setProperty('--couleur2', '#f8f9fa'); // éléments secondaires/transparents
+
+
+
+      }
+});
