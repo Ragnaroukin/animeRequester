@@ -8,9 +8,9 @@ let isOneLine;
 form.addEventListener('submit', e => {
     e.preventDefault();
     const fd = new FormData(form);
-    nom = fd.get('nom');
-    classement = fd.get('classement');
-    id = fd.get('id');
+    let nom = fd.get('nom');
+    let classement = fd.get('classement');
+    let id = fd.get('id');
     if (nom) {
         url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=' + nom;
         isOneLine = false;
