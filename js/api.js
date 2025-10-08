@@ -4,7 +4,7 @@ const xhr = new XMLHttpRequest();
 const form = document.getElementById('form');
 let url;
 let isOneLine;
-
+//gestion des evenements
 form.addEventListener('submit', e => {
     e.preventDefault();
     const fd = new FormData(form);
