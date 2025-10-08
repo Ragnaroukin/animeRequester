@@ -269,6 +269,8 @@ const resultExample = {
   let images = data.map(item => item.image);
   let genres = data.map(item => item.genres);
   let synopsis = data.map(item => item.synopsis);
+
+  let sombreButton = document.getElementById("sombre");
 for (let i = 0; i < data.length; i++) {
     if (i%3 === 0) {
         var cardGroup = document.createElement("div");
@@ -286,8 +288,8 @@ card.innerHTML = `
         <div class="shortsynopsis">
             <p class="card-text">${synopsis[i].substring(0, 100)}...</p>
         </div>
-        <p class="card-text"><small class="text-muted">Genres: ${genres[i].join(", ")}</small></p>
-        
+        <p class="card-text"><small class="genre">Genres: ${genres[i].join(", ")}</small></p>
+    
         <div class="synopsis-hover">
             <p class="card-text"><strong>Synopsis Complet:</strong></p>
             <p class="card-text">${synopsis[i]}</p>
@@ -297,6 +299,36 @@ card.innerHTML = `
 
             cardGroup.appendChild(card);
         }
+    }
+
+    sombreButton.addEventListener("click", toggleSombreMode);
+      
+    
+    function toggleSombreMode() {
+      if (sombreButton.classList.contains("btn-dark")) {
+        sombreButton.textContent = "Mode clair";
+        sombreButton.classList.remove("btn-dark");
+        sombreButton.classList.add("btn-light");
+        document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
+        document.documentElement.style.setProperty('--couleur2', 'rgba(0.5, 0.5, 0.5, 0.5)');
+        document.documentElement.style.setProperty('--couleur3', '#ffffff');
+        document.documentElement.style.setProperty('--couleur4', 'rgb(233, 233, 233)');
+        document.documentElement.style.setProperty('--couleur5', '#f8f9fa');
+        document.documentElement.style.setProperty('--couleur6', 'black');
+        
+      } else {
+        sombreButton.textContent = "Mode sombre";
+        sombreButton.classList.remove("btn-light");
+        sombreButton.classList.add("btn-dark");
+        document.documentElement.style.setProperty('--couleur1', '#121212'); // fond principal
+        document.documentElement.style.setProperty('--couleur2', 'rgba(255, 255, 255, 0.1)'); // éléments secondaires/transparents
+        document.documentElement.style.setProperty('--couleur3', '#1e1e1e'); // zones de contenu
+        document.documentElement.style.setProperty('--couleur4', '#2c2c2c'); // contrastes légers
+        document.documentElement.style.setProperty('--couleur5', '#0d0d0d'); // arrière-plan sombre profond
+        document.documentElement.style.setProperty('--couleur6', 'white'); // texte
+
+        
+      }
     }
 
   
