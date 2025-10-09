@@ -271,6 +271,9 @@ const resultExample = {
   let images = data.map(item => item.image);
   let genres = data.map(item => item.genres);
   let synopsis = data.map(item => item.synopsis);
+
+  console.log(sessionStorage.getItem("result"));
+
 for (let i = 0; i < data.length; i++) {
     if (i%3 === 0) {
         var cardGroup = document.createElement("div");

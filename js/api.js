@@ -50,7 +50,8 @@ promise
             result = "{\"data\":[" + res + "],\"meta\":{\"page\":1,\"size\":1,\"totalData\":10,\"totalPage\":1}}";
         else
             result = res;
-        console.log(result); // CETTE LIGNE
+        sessionStorage.setItem("result", result);
+        window.location.href = "./html/result.html";
     })
     .catch(err => {
         console.log(url);
