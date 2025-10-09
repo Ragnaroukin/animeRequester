@@ -47,10 +47,10 @@ const promise = new Promise((resolve, reject) => {
 promise
     .then(res => {
         if(isOneLine)
-            result = {"data" : res};
+            result = "{\"data\":[" + res + "],\"meta\":{\"page\":1,\"size\":1,\"totalData\":10,\"totalPage\":1}}";
         else
             result = res;
-        console.log(result);
+        console.log(result); // CETTE LIGNE
     })
     .catch(err => {
         console.log(url);
