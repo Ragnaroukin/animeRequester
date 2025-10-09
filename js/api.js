@@ -5,12 +5,14 @@ const form = document.getElementById('form');
 let url;
 let isOneLine;
 
+//gestion des evenements
 form.addEventListener('submit', e => {
     e.preventDefault();
     const fd = new FormData(form);
-    nom = fd.get('nom');
-    classement = fd.get('classement');
-    id = fd.get('id');
+    let nom = fd.get('nom');
+    let classement = fd.get('classement');
+    let id = fd.get('id');
+
     if (nom) {
         url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=' + nom;
         isOneLine = false;
@@ -46,10 +48,12 @@ const promise = new Promise((resolve, reject) => {
 
 promise
     .then(res => {
-        if(isOneLine)
-            result = {res};
+        if (isOneLine)
+            result = "{\"data\":[" + res + "],\"meta\":{\"page\":1,\"size\":1,\"totalData\":10,\"totalPage\":1}}";
         else
             result = res;
+        sessionStorage.setItem("result", result);
+        window.location.href = "./html/result.html";
     })
     .catch(err => {
         console.log(url);
