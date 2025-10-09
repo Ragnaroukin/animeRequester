@@ -47,9 +47,9 @@ const promise = new Promise((resolve, reject) => {
 promise
     .then(res => {
         if(isOneLine)
-            result = {res};
+            result = {"data" : res.json()};
         else
-            result = res;
+            result = res.json();
         console.log(result);
     })
     .catch(err => {
