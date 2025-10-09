@@ -12,12 +12,13 @@ xhr.addEventListener('readystatechange', function () {
 });
 
 xhr.open('GET', 'https://anime-db.p.rapidapi.com/genre');
-xhr.setRequestHeader('x-rapidapi-key', '589ffe3c27mshed298ed00c88ee4p150c58jsnec449e25eca6');
+xhr.setRequestHeader('x-rapidapi-key', '1be4fdd298msh8dc37149279e2acp1ec290jsn6626a55c72d2');
 xhr.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
 xhr.send();
 
 const container = document.getElementById("genre");
 let sombreButton = document.getElementById("darkmode");
+
 function create_genre(data) {
     let dataGenres = data.map(item => item._id); // maintenant ça marche
 
@@ -44,12 +45,12 @@ sombreButton.addEventListener("click", function() {
         sombreButton.classList.remove("btn-dark");
         sombreButton.classList.add("btn-light");
         document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
-        document.documentElement.style.setProperty('--couleur2', '#131313ff');
+        document.documentElement.style.setProperty('--couleur2', 'rgb(66, 66, 66)');
       } else {
         sombreButton.textContent = "Mode sombre";
         sombreButton.classList.remove("btn-light");
         sombreButton.classList.add("btn-dark");
-        document.documentElement.style.setProperty('--couleur1', '#131313ff'); // fond principal
+        document.documentElement.style.setProperty('--couleur1', 'rgb(66, 66, 66)'); // fond principal
         document.documentElement.style.setProperty('--couleur2', '#f8f9fa'); // éléments secondaires/transparents
 
 
