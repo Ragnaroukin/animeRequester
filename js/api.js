@@ -49,7 +49,7 @@ promise
         if(isOneLine)
             result = {"data" : res.data};
         else
-            result = res.data;
+            result = res;
         console.log(result);
     })
     .catch(err => {
