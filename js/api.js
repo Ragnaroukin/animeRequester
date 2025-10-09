@@ -47,7 +47,7 @@ const promise = new Promise((resolve, reject) => {
 promise
     .then(res => {
         if(isOneLine)
-            result = {"data" : res.data};
+            result = {"data" : res};
         else
             result = res;
         console.log(result);
