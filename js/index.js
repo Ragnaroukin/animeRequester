@@ -1,7 +1,10 @@
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
+const nom = document.getElementById('nom');
+const id = document.getElementById('id');
+const classement = document.getElementById('classement');
 
-xhr.addEventListener('readystatechange', function () {
+/*xhr.addEventListener('readystatechange', function () {
     if (this.readyState === this.DONE) {
         // Parse la réponse JSON
         const data = JSON.parse(this.responseText);
@@ -16,7 +19,7 @@ xhr.setRequestHeader('x-rapidapi-key', '1be4fdd298msh8dc37149279e2acp1ec290jsn66
 xhr.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
 xhr.send();
 
-const container = document.getElementById("genre");
+const container = document.getElementById("genre");*/
 let sombreButton = document.getElementById("darkmode");
 
 function create_genre(data) {
@@ -56,4 +59,25 @@ sombreButton.addEventListener("click", function() {
 
 
       }
+});
+
+nom.addEventListener('input', ()=>{
+    if(nom.value === '')
+        id.disabled =  classement.disabled = false;
+    else
+        id.disabled =  classement.disabled = true;
+});
+
+id.addEventListener('input', ()=>{
+    if(id.value === '')
+        nom.disabled =  classement.disabled = false;
+    else
+        nom.disabled =  classement.disabled = true;
+});
+
+classement.addEventListener('input', ()=>{
+    if(classement.value === '')
+        id.disabled =  nom.disabled = false;
+    else
+        nom.disabled =  id.disabled = true;
 });
