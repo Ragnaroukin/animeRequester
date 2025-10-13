@@ -1,0 +1,67 @@
+
+:root {
+    --couleur1: #131313ff; 
+    --couleur2: #ffffff; 
+}
+
+#margeForm {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement */
+    min-height: 100vh;       /* prend toute la hauteur de la fenêtre */   
+}
+
+#genre {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 3 colonnes égales */
+  gap: 10px; /* espace entre les cases */
+}
+
+.genre-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, label, a {
+    color: var(--couleur1);
+    
+}
+body {
+    background-color: var(--couleur2);
+}
+
+.darkmode {
+    background-color: var(--couleur2);
+    color: var(--couleur1);
+}
+.navbar, .navbar-expand-lg, .bg-body-tertiary, h1 {
+    background-color: var(--couleur2);
+    margin: 0;
+    padding: 0.5rem 1rem;
+}
+
+.navdarkmode {
+    background-color: var(--couleur2);
+    color: var(--couleur1);
+}
+
+hr {
+    border: 1px solid var(--couleur1);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+.text-blanc {
+    color: var(--couleur2);
+}
+
+.btn, .btn-primary {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.margenavtop {
+    margin-top: 10px ;
+}
