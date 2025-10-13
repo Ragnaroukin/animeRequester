@@ -36,21 +36,15 @@ else {
 }
 
 function create_genre(data) {
-    let dataGenres = data.map(item => item._id); // maintenant ça marche
+    let dataGenres = data.map(item => item._id);
 
     for (let i = 0; i < data.length; i++) {
-        if (i % 2 === 0) {
-            var group = document.createElement("div");
-            group.className = "genre-group";
-            container.appendChild(group);
-        }
-
         var checkbox = document.createElement("div");
         checkbox.innerHTML = `
             <input type="checkbox" id="${dataGenres[i]}" name="${dataGenres[i]}" />
             <label for="${dataGenres[i]}">${dataGenres[i]}</label>
         `;
-        group.appendChild(checkbox);
+        container.appendChild(checkbox);
     }
 }
 

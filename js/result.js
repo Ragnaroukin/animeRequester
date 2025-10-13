@@ -59,5 +59,3 @@ function toggleSombreMode() {
     document.documentElement.style.setProperty('--couleur6', 'white'); 
   }
 }
-
-

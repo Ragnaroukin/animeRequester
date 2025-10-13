@@ -1,4 +1,3 @@
-export let result;
 const data = null;
 const xhr = new XMLHttpRequest();
 const form = document.getElementById('form');
@@ -48,17 +47,17 @@ if (form) {
     });
 
 
-promise
-    .then(res => {
-        if (isOneLine)
-            result = "{\"data\":[" + res + "],\"meta\":{\"page\":1,\"size\":1,\"totalData\":10,\"totalPage\":1}}";
-        else
-            result = res;
-        sessionStorage.setItem("result", result);
-        window.location.href = "./html/result.html";
-    })
-    .catch(err => {
-        console.log(url);
-        console.error("Erreur:", err);
-    });
+    promise
+        .then(res => {
+            if (isOneLine)
+                result = "{\"data\":[" + res + "],\"meta\":{\"page\":1,\"size\":1,\"totalData\":10,\"totalPage\":1}}";
+            else
+                result = res;
+            sessionStorage.setItem("result", result);
+            window.location.href = "./html/result.html";
+        })
+        .catch(err => {
+            console.log(url);
+            console.error("Erreur:", err);
+        });
 }
