@@ -22,6 +22,19 @@ const container = document.getElementById("genre");
 let sombreButton = document.getElementById("darkmode");
 let sun = document.getElementById("sun");
 
+if (sessionStorage.getItem("mode") === "clair") {
+    sun.classList.remove("fa-sun");
+    sun.classList.add("fa-moon");
+    document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
+    document.documentElement.style.setProperty('--couleur2', 'rgb(66, 66, 66)');
+}
+else {
+    sun.classList.remove("fa-moon");
+    sun.classList.add("fa-sun");
+    document.documentElement.style.setProperty('--couleur1', 'rgb(66, 66, 66)');
+    document.documentElement.style.setProperty('--couleur2', '#f8f9fa');
+}
+
 function create_genre(data) {
     let dataGenres = data.map(item => item._id); // maintenant ça marche
 
@@ -47,10 +60,12 @@ sun.addEventListener("click", function() {
         sun.classList.add("fa-moon");
         document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
         document.documentElement.style.setProperty('--couleur2', 'rgb(66, 66, 66)');
+        sessionStorage.setItem("mode", "clair");
     } else {
         sun.classList.remove("fa-moon");
         sun.classList.add("fa-sun");
         document.documentElement.style.setProperty('--couleur1', 'rgb(66, 66, 66)');
         document.documentElement.style.setProperty('--couleur2', '#f8f9fa');
+        sessionStorage.setItem("mode", "sombre");
     }
 });
