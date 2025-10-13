@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeRequester</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body class="bg-lightgray text-black text-center">
+    <header>
+        <navbar class="navbar navbar-expand-lg navdarkmode margenavtop">
+            <div class="container-fluid darkmode">
+                <h1 class="navbar-brand text-warning">AnimeRequester</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse navdarkmode" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <input type="text" class="form-control" placeholder="Votre animé..." aria-label="Search">
+                </li>
+                <li class="nav-item ms-2">
+                <button class="btn btn-outline-warning">Rechercher</button>
+                </li>
+            </ul>
+
+            <!-- Bouton aligné à droite -->
+            <div class="d-flex ms-auto">
+                <button id="darkmode" class="btn btn-dark text-blanc">Dark mode</button>
+                <a href="./index.html" class="btn btn-warning text-blanc"  >Recherche avancée</a>
+            </div>
+            </div>
+
+            </div>
+            
+        </navbar>
+        <hr>
+    </header>
+    <main>
+        <div id="margeForm">
+            <form id="form" class="m-5" method="post" action="./html/result.html">
+                <div id="name">
+                    <h1 class="">Recherche Anime</h1>
+                    <div class="m-3">
+                        <label for="nom">Nom de l'animé : </label>
+                        <input type="text" class="form-control" name="nom" />
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label for="id">ID de l'animé : </label>
+                    <input type="text" class="form-control" name="id" size="5" />
+                </div>
+                <div class="m-3">
+                    <label for="classement">Classement : </label>
+                    <input type="text" class="form-control" name="classement" size="5" />
+                </div>
+
+                <div id="genre">
+                </div>
+                <div id="bouton">
+                    <button class="btn btn-danger" id="reinitialize">Réinitialiser</button>
+                    <input class="btn btn-warning text-blanc" type="submit" value="Rechercher" />
+                </div>
+            </form>
+        </div>
+    </main>
+    <!--<script type="module" src="./js/index.js"></script>-->
+    <script type="module" src="./js/api.js"></script>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
