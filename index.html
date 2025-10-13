@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-…-…" crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
@@ -15,7 +17,7 @@
     <header>
         <navbar class="navbar navbar-expand-lg navdarkmode margenavtop">
             <div class="container-fluid darkmode">
-                <h1 class="navbar-brand text-warning">AnimeRequester</h1>
+                <h1 class="navbar-brand text-info">AnimeRequester</h1>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -27,15 +29,14 @@
                 <input type="text" class="form-control" placeholder="Votre animé..." aria-label="Search">
                 </li>
                 <li class="nav-item ms-2">
-                <button class="btn btn-outline-warning">Rechercher</button>
+                <button class="btn btn-outline-info">Rechercher</button>
                 </li>
             </ul>
 
             <!-- Bouton aligné à droite -->
             <div class="d-flex ms-auto">
-                <button id="darkmode" class="btn btn-dark text-blanc">Dark mode</button>
+                <a href="./index.html" class="btn btn-info text-blanc"  >Recherche avancée</a>
                 <i id="sun" class="fa-solid fa-sun"></i>
-                <a href="./index.html" class="btn btn-warning text-blanc"  >Recherche avancée</a>
             </div>
             </div>
 
@@ -67,13 +68,17 @@
                 </div>
                 <div id="bouton">
                     <button class="btn btn-danger" id="reinitialize">Réinitialiser</button>
-                    <input class="btn btn-warning text-blanc" type="submit" value="Rechercher" />
+                    <input class="btn btn-info text-blanc" type="submit" value="Rechercher" />
                 </div>
             </form>
         </div>
     </main>
-    <script type="module" src="./js/index.js"></script>
-    <script type="module" src="./js/api.js"></script>
+    <script src="./js/index.js"></script>
+    <!--<script type="module" src="./js/api.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gQhU9IgHtJ0k0kJ8T+VuBbQbYqphZ4g0q4KMQZB8a/7BL9gK1iM/hnHi5XzVME6M"
+  crossorigin="anonymous"></script>
+
     <footer>
 
     </footer>

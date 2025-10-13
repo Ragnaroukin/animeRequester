@@ -1,5 +1,6 @@
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
+console.log("test");
 
 xhr.addEventListener('readystatechange', function () {
 
@@ -19,6 +20,7 @@ xhr.send();
 
 const container = document.getElementById("genre");
 let sombreButton = document.getElementById("darkmode");
+let sun = document.getElementById("sun");
 
 function create_genre(data) {
     let dataGenres = data.map(item => item._id); // maintenant ça marche
@@ -39,22 +41,16 @@ function create_genre(data) {
     }
 }
 
-sombreButton.addEventListener("click", function() {
-    
-      if (sombreButton.classList.contains("btn-dark")) {
-        sombreButton.textContent = "Mode clair";
-        sombreButton.classList.remove("btn-dark");
-        sombreButton.classList.add("btn-light");
+sun.addEventListener("click", function() {
+    if (sun.classList.contains("fa-sun")) {
+        sun.classList.remove("fa-sun");
+        sun.classList.add("fa-moon");
         document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
         document.documentElement.style.setProperty('--couleur2', 'rgb(66, 66, 66)');
-      } else {
-        sombreButton.textContent = "Mode sombre";
-        sombreButton.classList.remove("btn-light");
-        sombreButton.classList.add("btn-dark");
-        document.documentElement.style.setProperty('--couleur1', 'rgb(66, 66, 66)'); // fond principal
-        document.documentElement.style.setProperty('--couleur2', '#f8f9fa'); // éléments secondaires/transparents
-
-
-
-      }
+    } else {
+        sun.classList.remove("fa-moon");
+        sun.classList.add("fa-sun");
+        document.documentElement.style.setProperty('--couleur1', 'rgb(66, 66, 66)');
+        document.documentElement.style.setProperty('--couleur2', '#f8f9fa');
+    }
 });

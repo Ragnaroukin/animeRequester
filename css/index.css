@@ -6,17 +6,24 @@
 
 #margeForm {
     display: flex;
-    justify-content: center; /* centre horizontalement */
-    align-items: center;     /* centre verticalement */
-    min-height: 100vh;       /* prend toute la hauteur de la fenêtre */   
+    justify-content: center;
+    align-items: center;    
+    
 }
-
+#sun{
+    font-size: 35px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: var(--couleur1);
+}
 #genre {
   display: grid;
   grid-template-columns: repeat(7, 1fr); /* 3 colonnes égales */
   gap: 10px; /* espace entre les cases */
 }
-
+#searchInput {
+    width: 300px;
+}
 .genre-group {
   display: flex;
   flex-direction: column;
