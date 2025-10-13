@@ -34,6 +34,11 @@ for (let i = 0; i < size; i++) {
 `;
     cardGroup.appendChild(card);
   }
+  else {
+    var vide = document.createElement("div");
+    vide.className = "card-body"; //fait une carte vide
+    cardGroup.appendChild(vide);
+  }
 }
 
 sombreButton.addEventListener("click", toggleSombreMode);
