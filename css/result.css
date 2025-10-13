@@ -1,0 +1,79 @@
+:root{
+    --couleur1: #f8f9fa;
+    --couleur2: rgba(0.5, 0.5, 0.5, 0.5);
+    --couleur3:white;
+    --couleur4: rgb(233, 233, 233);
+    --couleur5: #f8f9fa;
+    --couleur6: black;
+    
+
+}
+
+body{
+    background-color: var(--couleur3);
+}
+
+#containerMain{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+.card-internal{
+    padding: 5%;
+}
+
+/* fait avec ia */
+/* 1. Masque le synopsis complet par défaut */
+.card:hover.image-hover{
+    display : none;
+}
+
+.image-hover{
+    display: block;
+}
+.synopsis-hover {
+    display: none;
+    
+    /* Optionnel: Ajoutez un peu de padding/marge si nécessaire */
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--couleur3); /* couleur claire pour le fond du synopsis */
+    border-radius: 5px;
+}
+
+.card:hover .synopsis-hover {
+    display: block;
+}
+
+.card:hover {
+    box-shadow: 0 50px 100px var(--couleur2);
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: var(--couleur3);
+}
+
+.card{background-color: var(--couleur4);}
+
+.card:hover .shortsynopsis{
+    display : none;
+}
+
+.shortsynopsis{
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--couleur3);
+    border-radius: 5px;
+}
+
+.card-text{
+    color: var(--couleur6);
+}
+.card-title{
+    color: var(--couleur6);
+}
+.genre{
+    color: var(--couleur6);
+}
+
