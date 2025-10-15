@@ -3,7 +3,8 @@ const req = new XMLHttpRequest();
 const form = document.getElementById('form');
 let url;
 let isOneLine;
-const selectionGenre = sessionStorage.getItem('genre');
+const selectionGenre = sessionStorage.getItem('genre').replace(',', '%2C').replace(' ', '%20');
+
 
 //gestion des evenements
 if (form) {
