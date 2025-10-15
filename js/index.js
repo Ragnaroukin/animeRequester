@@ -19,20 +19,19 @@ xhr.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
 xhr.send();
 
 const container = document.getElementById("genre");
-let sombreButton = document.getElementById("darkmode");
 let sun = document.getElementById("sun");
 
 if (sessionStorage.getItem("mode") === "clair") {
     sun.classList.remove("fa-sun");
     sun.classList.add("fa-moon");
-    document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
-    document.documentElement.style.setProperty('--couleur2', 'rgb(66, 66, 66)');
+    document.documentElement.style.setProperty('--couleur1', 'rgb(66, 66, 66)');
+    document.documentElement.style.setProperty('--couleur2', '#f8f9fa');
 }
 else {
     sun.classList.remove("fa-moon");
     sun.classList.add("fa-sun");
-    document.documentElement.style.setProperty('--couleur1', 'rgb(66, 66, 66)');
-    document.documentElement.style.setProperty('--couleur2', '#f8f9fa');
+    document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
+    document.documentElement.style.setProperty('--couleur2', 'rgb(66, 66, 66)');
 }
 
 function create_genre(data) {
@@ -52,14 +51,14 @@ sun.addEventListener("click", function() {
     if (sun.classList.contains("fa-sun")) {
         sun.classList.remove("fa-sun");
         sun.classList.add("fa-moon");
-        document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
-        document.documentElement.style.setProperty('--couleur2', 'rgb(66, 66, 66)');
+        document.documentElement.style.setProperty('--couleur1', 'rgb(66, 66, 66)');
+        document.documentElement.style.setProperty('--couleur2', '#f8f9fa');
         sessionStorage.setItem("mode", "clair");
     } else {
         sun.classList.remove("fa-moon");
         sun.classList.add("fa-sun");
-        document.documentElement.style.setProperty('--couleur1', 'rgb(66, 66, 66)');
-        document.documentElement.style.setProperty('--couleur2', '#f8f9fa');
+        document.documentElement.style.setProperty('--couleur1', '#f8f9fa');
+        document.documentElement.style.setProperty('--couleur2', 'rgb(66, 66, 66)');
         sessionStorage.setItem("mode", "sombre");
     }
 });
