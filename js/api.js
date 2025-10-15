@@ -1,5 +1,5 @@
 const data = null;
-const xhr = new XMLHttpRequest();
+const req = new XMLHttpRequest();
 const form = document.getElementById('form');
 let url;
 let isOneLine;
@@ -25,22 +25,22 @@ if (form) {
             url = 'https://anime-db.p.rapidapi.com/anime/by-id/' + id;
             isOneLine = true;
         }
-        xhr.open('GET', url);
-        xhr.setRequestHeader('x-rapidapi-key', '111625b3e8mshbae2cd73237e06fp1a382bjsncb906ed053e7');
-        xhr.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
+        req.open('GET', url);
+        req.setRequestHeader('x-rapidapi-key', '111625b3e8mshbae2cd73237e06fp1a382bjsncb906ed053e7');
+        req.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
 
-        xhr.send(data);
+        req.send(data);
     });
 
     const promise = new Promise((resolve, reject) => {
-        xhr.withCredentials = true;
+        req.withCredentials = true;
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    resolve(xhr.responseText);
+        req.onreadystatechange = function () {
+            if (req.readyState === XMLHttpRequest.DONE) {
+                if (req.status >= 200 && req.status < 300) {
+                    resolve(req.responseText);
                 } else {
-                    reject(xhr.status);
+                    reject(req.status);
                 }
             }
         };
