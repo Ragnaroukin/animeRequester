@@ -3,8 +3,7 @@ const req = new XMLHttpRequest();
 const form = document.getElementById('form');
 let url;
 let isOneLine;
-const selectionGenre = sessionStorage.getItem('genre').replace(',', '%2C').replace(' ', '%20');
-
+const selectionGenre = sessionStorage.getItem('genre').replaceAll(',', '%2C').replaceAll(' ', '%20');
 
 //gestion des evenements
 if (form) {
@@ -30,7 +29,7 @@ if (form) {
             isOneLine = true;
         }
         req.open('GET', url);
-        req.setRequestHeader('x-rapidapi-key', '111625b3e8mshbae2cd73237e06fp1a382bjsncb906ed053e7');
+        req.setRequestHeader('x-rapidapi-key', '83e099eae4msh95fcf898d140624p1dcfdejsn9577d139c852');
         req.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
 
         req.send(data);
@@ -58,11 +57,12 @@ if (form) {
             else
                 result = res;
             sessionStorage.setItem("result", result);
-            //window.location.href = "./html/result.html";
-            console.log(url);
+            window.location.href = "./html/result.html";
+            alert(url);
         })
         .catch(err => {
             console.log(url);
             console.error("Erreur:", err);
         });
 }
+
