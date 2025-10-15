@@ -1,6 +1,9 @@
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
+const genre = document.getElementById('genre');
+const listeGenre = [];
+
 xhr.addEventListener('readystatechange', function () {
 
     if (this.readyState === this.DONE) {
@@ -37,6 +40,12 @@ function create_genre(data) {
         `;
         group.appendChild(checkbox);
     }
+
+    for (let j = 0; j < genre.children.length; j++)
+        genre.children[j].addEventListener('input', e => {
+            listeGenre.push(e.target.name);
+            sessionStorage.setItem("genre", listeGenre);
+        })
 }
 
 sombreButton.addEventListener("click", function() {
@@ -58,3 +67,4 @@ sombreButton.addEventListener("click", function() {
 
       }
 });
+    

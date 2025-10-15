@@ -1,9 +1,9 @@
-export let result;
 const data = null;
-const xhr = new XMLHttpRequest();
+const req = new XMLHttpRequest();
 const form = document.getElementById('form');
 let url;
 let isOneLine;
+const selectionGenre = sessionStorage.getItem('genre');
 
 //gestion des evenements
 if (form) {
@@ -17,6 +17,8 @@ if (form) {
         if (nom) {
             url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=' + nom;
             isOneLine = false;
+            if(selectionGenre)
+                url += '&genres='+selectionGenre;
         }
         if (classement) {
             url = 'https://anime-db.p.rapidapi.com/anime/by-ranking/' + classement;
@@ -26,39 +28,40 @@ if (form) {
             url = 'https://anime-db.p.rapidapi.com/anime/by-id/' + id;
             isOneLine = true;
         }
-        xhr.open('GET', url);
-        xhr.setRequestHeader('x-rapidapi-key', '111625b3e8mshbae2cd73237e06fp1a382bjsncb906ed053e7');
-        xhr.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
+        req.open('GET', url);
+        req.setRequestHeader('x-rapidapi-key', '111625b3e8mshbae2cd73237e06fp1a382bjsncb906ed053e7');
+        req.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
 
-        xhr.send(data);
+        req.send(data);
     });
 
     const promise = new Promise((resolve, reject) => {
-        xhr.withCredentials = true;
+        req.withCredentials = true;
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    resolve(xhr.responseText);
+        req.onreadystatechange = function () {
+            if (req.readyState === XMLHttpRequest.DONE) {
+                if (req.status >= 200 && req.status < 300) {
+                    resolve(req.responseText);
                 } else {
-                    reject(xhr.status);
+                    reject(req.status);
                 }
             }
         };
     });
 
 
-promise
-    .then(res => {
-        if (isOneLine)
-            result = "{\"data\":[" + res + "],\"meta\":{\"page\":1,\"size\":1,\"totalData\":10,\"totalPage\":1}}";
-        else
-            result = res;
-        sessionStorage.setItem("result", result);
-        window.location.href = "./html/result.html";
-    })
-    .catch(err => {
-        console.log(url);
-        console.error("Erreur:", err);
-    });
+    promise
+        .then(res => {
+            if (isOneLine)
+                result = "{\"data\":[" + res + "],\"meta\":{\"page\":1,\"size\":1,\"totalData\":10,\"totalPage\":1}}";
+            else
+                result = res;
+            sessionStorage.setItem("result", result);
+            //window.location.href = "./html/result.html";
+            console.log(url);
+        })
+        .catch(err => {
+            console.log(url);
+            console.error("Erreur:", err);
+        });
 }
