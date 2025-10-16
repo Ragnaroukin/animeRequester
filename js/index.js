@@ -1,6 +1,5 @@
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-console.log("test");
 
 xhr.addEventListener('readystatechange', function () {
 

@@ -2,6 +2,7 @@ const data = null;
 const req = new XMLHttpRequest();
 const form = document.getElementById('form');
 let url;
+let result;
 let isOneLine;
 
 //gestion des evenements
@@ -45,7 +46,6 @@ if (form) {
             }
         };
     });
-
 
     promise
         .then(res => {

@@ -6,7 +6,9 @@ let images = data.map(item => item.image);
 let genres = data.map(item => item.genres);
 let synopsis = data.map(item => item.synopsis);
 
-for (let i = 0; i < data.length; i++) {
+const size = (data.length % 3 === 0) ? data.length : data.length + (3 - data.length % 3);
+
+for (let i = 0; i < size; i++) {
   if (i % 3 === 0) {
     var cardGroup = document.createElement("div");
     cardGroup.className = "card-group";
@@ -29,6 +31,11 @@ for (let i = 0; i < data.length; i++) {
         </div>
     </div>`;
     cardGroup.appendChild(card);
+  }
+  else {
+    let vide = document.createElement("div");
+    vide.className = "card-body"; //fait une carte vide
+    cardGroup.appendChild(vide);
   }
 }
 
@@ -53,19 +60,6 @@ else {
   document.documentElement.style.setProperty('--couleur4', '#2c2c2c');
   document.documentElement.style.setProperty('--couleur5', '#0d0d0d');
   document.documentElement.style.setProperty('--couleur6', 'white');
-}
-
-function create_genre(data) {
-  let dataGenres = data.map(item => item._id);
-
-  for (let i = 0; i < data.length; i++) {
-    var checkbox = document.createElement("div");
-    checkbox.innerHTML = `
-            <input type="checkbox" id="${dataGenres[i]}" name="${dataGenres[i]}" />
-            <label for="${dataGenres[i]}">${dataGenres[i]}</label>
-        `;
-    container.appendChild(checkbox);
-  }
 }
 
 sun.addEventListener("click", function () {
