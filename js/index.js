@@ -1,5 +1,8 @@
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
+sessionStorage.clear();
+
+const listeGenre = [];
 
 xhr.addEventListener('readystatechange', function () {
 
@@ -18,6 +21,7 @@ xhr.setRequestHeader('x-rapidapi-host', 'anime-db.p.rapidapi.com');
 xhr.send();
 
 const container = document.getElementById("genre");
+
 let sun = document.getElementById("sun");
 
 if (sessionStorage.getItem("mode") === "clair") {
@@ -44,9 +48,14 @@ function create_genre(data) {
         `;
         container.appendChild(checkbox);
     }
+    for (let j = 0; j < container.children.length; j++)
+        container.children[j].addEventListener('input', e => {
+            listeGenre.push(e.target.name);
+            sessionStorage.setItem("genre", listeGenre);
+        });
 }
 
-sun.addEventListener("click", function() {
+sun.addEventListener("click", function () {
     if (sun.classList.contains("fa-sun")) {
         sun.classList.remove("fa-sun");
         sun.classList.add("fa-moon");

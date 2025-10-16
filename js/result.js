@@ -33,7 +33,7 @@ for (let i = 0; i < size; i++) {
     cardGroup.appendChild(card);
   }
   else {
-    let vide = document.createElement("div");
+    var vide = document.createElement("div");
     vide.className = "card-body"; //fait une carte vide
     cardGroup.appendChild(vide);
   }
@@ -85,3 +85,4 @@ sun.addEventListener("click", function () {
     sessionStorage.setItem("mode", "sombre");
   }
 });
+
