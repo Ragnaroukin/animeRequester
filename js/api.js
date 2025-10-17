@@ -11,7 +11,7 @@ if (form) {
         e.preventDefault();
         const fd = new FormData(form);
         let nom = fd.get('nom');
-        let selectionGenre = sessionStorage.getItem('genre').replaceAll(',', '%2C').replaceAll(' ', '%20')
+        let selectionGenre = (sessionStorage.getItem('genre')) ? sessionStorage.getItem('genre').replaceAll(',', '%2C').replaceAll(' ', '%20') : null;
         let classement = fd.get('classement');
         let id = fd.get('id');
         url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10';

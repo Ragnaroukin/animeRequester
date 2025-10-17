@@ -75,22 +75,27 @@ sun.addEventListener("click", function () {
 });
 
 nom.addEventListener('input', ()=>{
-    if(nom.value === '')
+    if(nom.value === ''){
         id.disabled =  classement.disabled = false;
-    else
+        container.hidden = true;
+    }
+    else{
         id.disabled =  classement.disabled = true;
+        container.hidden = false;
+    }
+        
 });
 
 id.addEventListener('input', ()=>{
-    if(id.value === '')
-        nom.disabled =  classement.disabled = false;
+    if(id.value === '') 
+        nom.disabled =  classement.disabled = container.hidden = false;
     else
-        nom.disabled =  classement.disabled = true;
+        nom.disabled =  classement.disabled = container.hidden = true;
 });
 
 classement.addEventListener('input', ()=>{
     if(classement.value === '')
-        id.disabled =  nom.disabled = false;
+        id.disabled =  nom.disabled = container.hidden = false;
     else
-        nom.disabled =  id.disabled = true;
+        nom.disabled =  id.disabled = container.hidden = true;
 });
