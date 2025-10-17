@@ -3,8 +3,7 @@ const req = new XMLHttpRequest();
 const form = document.getElementById('form');
 let url;
 let result;
-let isOneLine;
-const selectionGenre = (sessionStorage.getItem('genre')) ? sessionStorage.getItem('genre').replaceAll(',', '%2C').replaceAll(' ', '%20') : null;
+let isOneLine = false;
 
 //gestion des evenements
 if (form) {
@@ -12,15 +11,14 @@ if (form) {
         e.preventDefault();
         const fd = new FormData(form);
         let nom = fd.get('nom');
+        let selectionGenre = sessionStorage.getItem('genre').replaceAll(',', '%2C').replaceAll(' ', '%20')
         let classement = fd.get('classement');
         let id = fd.get('id');
-
-        if (nom) {
-            url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=' + nom;
-            isOneLine = false;
-            if(selectionGenre)
-                url += '&genres='+selectionGenre;
-        }
+        url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10';
+        if (nom)
+            url += '&search=' + nom;
+        if(selectionGenre)
+            url += '&genres=' + selectionGenre;
         if (classement) {
             url = 'https://anime-db.p.rapidapi.com/anime/by-ranking/' + classement;
             isOneLine = true;

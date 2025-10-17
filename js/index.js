@@ -1,11 +1,14 @@
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
+
 sessionStorage.clear();
 
+const nom = document.getElementById('nom');
+const id = document.getElementById('id');
+const classement = document.getElementById('classement');
 const listeGenre = [];
 
 xhr.addEventListener('readystatechange', function () {
-
     if (this.readyState === this.DONE) {
         // Parse la réponse JSON
         const data = JSON.parse(this.responseText);
@@ -69,4 +72,25 @@ sun.addEventListener("click", function () {
         document.documentElement.style.setProperty('--couleur2', 'rgb(66, 66, 66)');
         sessionStorage.setItem("mode", "sombre");
     }
+});
+
+nom.addEventListener('input', ()=>{
+    if(nom.value === '')
+        id.disabled =  classement.disabled = false;
+    else
+        id.disabled =  classement.disabled = true;
+});
+
+id.addEventListener('input', ()=>{
+    if(id.value === '')
+        nom.disabled =  classement.disabled = false;
+    else
+        nom.disabled =  classement.disabled = true;
+});
+
+classement.addEventListener('input', ()=>{
+    if(classement.value === '')
+        id.disabled =  nom.disabled = false;
+    else
+        nom.disabled =  id.disabled = true;
 });
